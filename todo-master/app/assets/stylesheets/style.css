@@ -1,0 +1,352 @@
+/*
+	David Maza - 20773548
+	
+	This file is arguably CSS3 valid.
+	
+	However, Internet Explorer styling such as 
+		"filter: progid:DXImageTransform.Microsoft.gradient"
+		
+	for IE 9 and below may cause CSS3 validation errors for either the element that style is applied to or the styling for the next element that appears in the stylesheet.
+	
+	If you remove all "filter" attributes then the CSS stylesheet is valid according to (http://jigsaw.w3.org/css-validator/validator) with the exception of the "::selection" style. While this property is supported in all major browsers, it is not part of the CSS standard.
+	
+*/
+
+/* Over-ride selection text colour */
+::selection {
+	background: #a8d1ff; /* Safari */
+	}
+::-moz-selection {
+	background: #a8d1ff; /* Firefox */
+}
+
+
+html {
+	font-family: PT Sans, Segoe UI, Verdana, Arial;
+	font-weight: 700;
+	margin-bottom: 0;
+	height: 100%;
+	
+	background: rgb(53,106,160); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(53,106,160,1) 60%, rgba(63,76,107,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(60%,rgba(53,106,160,1)), color-stop(100%,rgba(63,76,107,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(53,106,160,1) 60%,rgba(63,76,107,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(53,106,160,1) 60%,rgba(63,76,107,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(53,106,160,1) 60%,rgba(63,76,107,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(53,106,160,1) 60%,rgba(63,76,107,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#356aa0', endColorstr='#3f4c6b',GradientType=0 ); /* IE6-9 */
+}
+
+header {
+	color: white;
+	height: 35px;
+	width: 100%;
+	background: black;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index:999;
+}
+
+header a:link, footer a:link{
+	color: inherit !important;
+	text-decoration: none !important;
+}
+header a:hover, header a:active, footer a:hover, footer a:active {
+	color: inherit !important;
+	text-decoration: none !important;
+}
+header a:visited, footer a:visited {
+	color: inherit !important;
+	text-decoration: none !important;
+}
+
+header #logo a img {
+	padding-top: 7px;
+}
+
+header span {
+	font-family: Patrick Hand SC, Segoe UI, Verdana, Arial;
+	font-size: 1.1em;
+	padding-left: 25px;
+	line-height:34px;
+}
+
+header ol {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: inline;
+	font-family: PT Sans, Segoe UI, Verdana, Arial;
+	line-height:30px;
+}
+
+header li {
+	float: right;
+	padding: 2px 25px;
+}
+
+header ol li:nth-child(2) {
+	margin-top: -1px;
+}
+
+header li>div {
+	cursor: pointer;
+}
+
+/* http://www.colorzilla.com/gradient-editor/ */
+header {
+	background: #45484d; /* Old browsers */
+	background: -moz-linear-gradient(top,  #45484d 0%, #000000 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45484d), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #45484d 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #45484d 0%,#000000 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #45484d 0%,#000000 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #45484d 0%,#000000 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+
+.rotateArrow90 {
+	-o-transform: rotate(90deg);
+	-khtml-transform: rotate(90deg);
+	-webkit-transform: rotate(90deg); 
+	-moz-transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+
+	float: left;
+	margin: -0.5em -0.75em 0 0;
+}
+
+/* Prevents weird positioning when jQuery UI effects are occuring */
+.login-window * {
+	overflow:hidden;
+	white-space: nowrap;
+}
+
+.login-window {
+	right: 0;
+	top: 35px; /* Equals the height of the header */
+	position: fixed;
+	background: rgba(150, 150, 150, 0.75); /* Put the opacity here instead of using 'opacity' since the children always inherit the parent opacity */
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	color: DimGray;
+	z-index:998; /* 1 less than the header */
+}
+.login-window form {
+	opacity: 1;
+	position: relative;
+	background: white;
+	padding: 10px;
+	margin: 6px;
+}
+	
+section {
+	width: 850px;
+	margin-left:auto;
+	margin-right:auto;
+	border: 1px;
+	border-color: grey;
+	border-style: solid;
+	display: block;
+	background: white;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+section.homepage {
+	margin-top: -28px;
+}
+section.standard {
+	padding: 50px 25px;
+	font-weight: normal !important;
+}
+
+section p {
+	font-weight: normal;
+}
+
+p.halfBreak {
+	font-size: 0.5em;
+}
+
+.ui-dialog {
+	font-size: 0.8em;
+	display: none;
+}
+
+.todoList {
+	width: 95%;
+	list-style-type: none;
+}
+
+.todoListOptions {
+	font-size: 0.8em;
+	margin-top: -1em;
+	margin-bottom: 2em;
+}
+
+.todoList li {
+	padding-bottom: 4px;
+}
+
+.itemStatus+label {
+	width:16px; 
+	height:16px; 
+	vertical-align:middle;
+	margin: 0px 10px 0px 3px;
+}
+
+.ui-icon-grip-dotted-vertical {
+	cursor: move;
+}
+
+
+
+
+footer {
+	position: relative;
+	bottom: 0;
+	width: 830px;
+	margin: 0 auto;
+	opacity: 0.5;
+	margin-top: 7px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	font-size: 0.9em;
+	color: white;
+	height: auto;
+}
+
+footer ol {
+	display: block;
+	float: left;
+	height: auto;
+}
+
+footer ol, footer ol li {
+	list-style-type: none;
+	width: auto;
+}
+
+footer .copyright {
+	font-size: 0.7em;
+	display: block;
+	float: right;
+	position: relative;
+	bottom: 0;
+	text-align: center;
+}
+
+/* Text styling */
+h1 {
+	font-size: 3em;
+	margin-bottom: 0.5em;
+}
+h2 {
+	font-size: 2em;
+	margin-bottom: 0.5em;
+}
+h3 {
+	font-size: 1.5em;
+	margin-bottom: 0.5em;
+}
+h4 {
+	font-size: 1em;
+	margin-bottom: 0em;
+}
+
+a:link {
+	color: inherit;
+}
+a:hover, a:active {
+	color: SlateGray !important;
+}
+a:visited {
+	color: inherit;
+}
+
+a.no-underline:link, a.no-underline:hover, a.no-underline:active, a.no-underline:visited {
+	text-decoration: none;
+}
+
+a.cursorButton:hover {
+	cursor: pointer;
+}
+
+/* Homepage */
+.slider {
+	background: rgb(235,235,235); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(235,235,235,1) 80%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(80%,rgba(235,235,235,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(235,235,235,1) 80%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(235,235,235,1) 80%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(235,235,235,1) 80%,rgba(255,255,255,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(235,235,235,1) 80%,rgba(255,255,255,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebebeb', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+	border-width: 0 0 0 0;
+	border-style: solid;
+	border-color: grey;
+	height:450px;
+	top:0;
+	left:0;
+	position: relative;
+}
+.slide {
+	bottom: 0;
+	left: 0;
+	top: auto !important; /* jQuery Cycle likes to set it to 0 */
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.slide-content {
+	bottom: 0;
+	left: 0;
+	top: auto !important; /* jQuery Cycle likes to set it to 0 */
+	padding: 20px;
+	padding: 20px;
+	position: absolute;
+}
+.slide-content>.text {
+	bottom: 0;
+	left:0;
+	position:relative;
+	margin: 0;
+	line-height: 1em;
+}
+
+form input {
+	margin: 0.5em;
+	height: 2em;
+}
+form input {
+	padding: 3px 15px 3px 3px;
+}
+form input[required] {
+	background: url(/assets/asterisk.gif) no-repeat;
+	background-color: white;
+	background-size: auto 26px;
+	background-position: right top;
+	 
+	border:1px solid #ccc;
+	border-radius: 4px 4px 4px 4px;
+	border-width: 1px;
+	margin-bottom: 10px;
+}
+
+.signupForm {
+	width: 600px;
+}
+
+.signupForm label {
+	width: 25%;
+	display:inline-block
+}
+
+.validationFailed {
+	font-size: 0.8em;
+	color: red;
+}
+
